@@ -1,5 +1,5 @@
-function isPrime(num) {
-  if (num < 2) return true;
+export function isPrime(num) {
+  if (num < 2) return false;
 
   for (let i = 2; i < num; i++) {
     if (num % i === 0) {
@@ -10,11 +10,23 @@ function isPrime(num) {
   return true;
 }
 
-function listPrimes(num) {
+export function listPrimes(num) {
   const list = [];
 
-  for (let i = 1; i < num; i++) {
+  for (let i = 2; i < num; i++) {
     if (isPrime(i)) {
+      list.push(i);
+    }
+  }
+
+  return list;
+}
+
+export function listComposites(num) {
+  const list = [];
+
+  for (let i = 2; i < num; i++) {
+    if (!isPrime(i)) {
       list.push(i);
     }
   }

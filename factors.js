@@ -1,4 +1,8 @@
-function findFactorPairs(num) {
+export function isFactor(num, factor) {
+  return num % factor === 0;
+}
+
+export function findFactorPairs(num) {
   if (num < 2) return "Try a number higher than 1";
 
   const results = [];
@@ -12,7 +16,7 @@ function findFactorPairs(num) {
   return results;
 }
 
-function findFactors(num) {
+export function findFactors(num) {
   if (num < 2) return "Try a number higher than 1";
   const factors = [];
 
@@ -23,16 +27,4 @@ function findFactors(num) {
   }
 
   return factors;
-}
-
-function findMultiples(num, times) {
-  if (times < 1) return "Enter a times higher than 1";
-
-  const multiples = [];
-
-  for (let i = 1; i <= times; i++) {
-    multiples.push(num * i);
-  }
-
-  return multiples;
 }
