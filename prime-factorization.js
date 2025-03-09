@@ -1,22 +1,22 @@
-import { isPrime, listPrimes } from "./prime";
-
 export function primeFactorization(num) {
   const results = [];
 
-  const primeList = listPrimes(num);
-
   let quotient = num;
 
-  while (!isPrime(quotient)) {
-    for (const el of primeList) {
-      if (quotient % el === 0) {
-        results.push(el);
-        quotient /= el;
-      }
+  let divisor = 2;
+
+  while (divisor <= quotient) {
+    if (quotient % divisor === 0) {
+      results.push(divisor);
+      quotient /= divisor;
+    } else {
+      divisor++;
     }
   }
 
-  results.push(quotient);
+  if (results.length === 1) {
+    results.unshift(1);
+  }
 
   return results;
 }
