@@ -1,5 +1,9 @@
-export function findRatio() {
-  const results = {};
+export function findRatio(dividend, divisor, x, y) {
+  if (x) {
+    return (divisor * x) / dividend;
+  } else if (y) {
+    return (dividend * y) / divisor;
+  }
 
-  return results;
+  return dividend / divisor;
 }
